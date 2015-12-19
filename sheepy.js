@@ -6,7 +6,8 @@
   }
 
   function resolvePath(href){
-    if(href.indexOf('../') == 0){ console.log('---');console.log(href);console.log(basepath);console.log(basepath.replace(/[^\/]+\/?$/, ''));console.log(href.replace('../', ''));}
+    var basepath = location.protocol + '//' + (location.host + location.pathname).replace(/\/[^\/]+$/, '') ;
+    var rootpath = location.protocol + '//' + location.host;
     return  
       (href.indexOf('http://') == 0 || href.indexOf('https://') == 0) ? href :
       (href.indexOf('/') == 0) ? rootpath + href :
